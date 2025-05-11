@@ -22,6 +22,8 @@ export interface FindClientFacadeOutputDto {
     name: string,
     email: string,
     address: string,
+    createdAt: Date,
+    updatedAt: Date,
 }
 
 export interface ClientFacadeInterface {
