@@ -10,7 +10,11 @@ export interface FindInvoiceFacadeOutputDto {
     name: string;
     document: string;
     address: Address;
-    items: InvoiceItems[];
+    items: {
+        id: string,
+        name: string,
+        price: number,
+    }[];
     total: number;
     createdAt: Date;
 }
@@ -24,7 +28,11 @@ export interface GenerateInvoiceFacadeInputDto {
     city: string;
     state: string;
     zipCode: string;
-    items: InvoiceItems[];
+    items: {
+        id: string,
+        name: string,
+        price: number,
+    }[];
 }
 
 export interface GenerateInvoiceFacadeOutputDto {
@@ -37,7 +45,11 @@ export interface GenerateInvoiceFacadeOutputDto {
     city: string;
     state: string;
     zipCode: string;
-    items: InvoiceItems[];
+    items: {
+        id: string,
+        name: string,
+        price: number,
+    }[];
 }
 
 export default interface InvoiceFacadeInterface {

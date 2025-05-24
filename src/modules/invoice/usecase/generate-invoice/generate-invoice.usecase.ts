@@ -2,6 +2,7 @@ import UseCaseInterface from "../../../@shared/domain/usecase/use-case.interface
 import Address from "../../../@shared/domain/value-object/address.value-object";
 import Id from "../../../@shared/domain/value-object/id.value-object";
 import Invoice from "../../domain/invoice";
+import InvoiceItems from "../../domain/invoice.items";
 import InvoiceGateway from "../../gateway/invoice.gateway";
 import { GenerateInvoiceInputDto, GenerateInvoiceOutputDto } from "./generate-invoice.dto";
 
@@ -29,7 +30,13 @@ export default class GenerateInvoiceUseCase implements UseCaseInterface {
             name: input.name,
             document: input.document,
             address: address,
-            items: input.items,
+            items: input.items.map((item) => {
+                return new InvoiceItems({
+                    id: new Id(item.id),
+                    name: item.name,
+                    price: item.price,
+                })
+            }),
         })
 
         await this._invoiceRepository.generate(invoice);
@@ -45,7 +52,13 @@ export default class GenerateInvoiceUseCase implements UseCaseInterface {
             city: invoice.address.city,
             state: invoice.address.state,
             zipCode: invoice.address.zipCode,
-            items: invoice.items,
+            items: invoice.items.map((item) => {
+                return {
+                    id: item.id.id,
+                    name: item.name,
+                    price: item.price,
+                }
+            }),
             total: invoice.total,
         }
     }

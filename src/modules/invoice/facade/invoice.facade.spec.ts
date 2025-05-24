@@ -61,7 +61,13 @@ describe("Invoice Facade test", () => {
             city: address.city,
             state: address.state,
             zipCode: address.zipCode,
-            items: invoiceItems,
+            items: invoiceItems.map((item) => {
+                return {
+                    id: item.id.id,
+                    name: item.name,
+                    price: item.price
+                }
+            }),
         }
 
 
@@ -119,7 +125,13 @@ describe("Invoice Facade test", () => {
             city: address.city,
             state: address.state,
             zipCode: address.zipCode,
-            items: invoiceItems,
+            items: invoiceItems.map((item) => {
+                return {
+                    id: item.id.id,
+                    name: item.name,
+                    price: item.price,
+                }
+            }),
         }
 
         const invoiceOutputDto = await invoiceFacade.generate(input);

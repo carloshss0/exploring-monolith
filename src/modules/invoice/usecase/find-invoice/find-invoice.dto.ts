@@ -10,7 +10,11 @@ export interface FindInvoiceOutputDto {
     name: string;
     document: string;
     address: Address;
-    items: InvoiceItems[];
+    items: {
+        id: string,
+        name: string,
+        price: number,
+    }[];
     total: number;
     createdAt: Date;
 }

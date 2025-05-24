@@ -9,7 +9,11 @@ export interface GenerateInvoiceInputDto {
     city: string;
     state: string;
     zipCode: string;
-    items: InvoiceItems[];
+    items: {
+        id: string,
+        name: string,
+        price: number,
+    }[];
     
 }
 
@@ -23,7 +27,11 @@ export interface GenerateInvoiceOutputDto {
     city: string;
     state: string;
     zipCode: string;
-    items: InvoiceItems[];
+    items: {
+        id: string,
+        name: string,
+        price: number,
+    }[];
     total: number;
 }
 
