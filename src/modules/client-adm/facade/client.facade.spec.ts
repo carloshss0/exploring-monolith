@@ -28,7 +28,13 @@ describe("ClientFacade test", () => {
             id: "1",
             name: "John",
             email: "john@email.com",
-            address: "Street 1, SW MockCity",
+            document: "0000",
+            street: "some address",
+            number: 1,
+            complement: "",
+            city: "some city",
+            state: "some state",
+            zipCode: "000",
         };
 
         await clientFacade.addClient(input);
@@ -41,7 +47,13 @@ describe("ClientFacade test", () => {
         expect(client!.id).toBe("1");
         expect(client!.name).toBe("John");
         expect(client!.email).toBe("john@email.com");
-        expect(client!.address).toBe("Street 1, SW MockCity");
+        expect(client!.document).toEqual("0000");
+        expect(client!.street).toEqual("some address");
+        expect(client!.number).toEqual(1);
+        expect(client!.complement).toEqual("");
+        expect(client!.city).toEqual("some city");
+        expect(client!.state).toEqual("some state");
+        expect(client!.zipCode).toEqual("000");
     });
 
     it("Should find a client", async () => {
@@ -50,7 +62,13 @@ describe("ClientFacade test", () => {
             id: "1",
             name: "John",
             email: "john@email.com",
-            address: "Street 1, SW MockCity",
+            document: "0000",
+            street: "some address",
+            number: 1,
+            complement: "",
+            city: "some city",
+            state: "some state",
+            zipCode: "000",
         };
 
         await clientFacade.addClient(input);
@@ -64,7 +82,13 @@ describe("ClientFacade test", () => {
         expect(result.id).toBe("1");
         expect(result.name).toBe("John");
         expect(result.email).toBe("john@email.com");
-        expect(result.address).toBe("Street 1, SW MockCity");
+        expect(result.document).toEqual("0000");
+        expect(result.street).toEqual("some address");
+        expect(result.number).toEqual(1);
+        expect(result.complement).toEqual("");
+        expect(result.city).toEqual("some city");
+        expect(result.state).toEqual("some state");
+        expect(result.zipCode).toEqual("000");
     })
 
 })
