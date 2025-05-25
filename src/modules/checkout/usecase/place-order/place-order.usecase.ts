@@ -1,9 +1,7 @@
 import UseCaseInterface from "../../../@shared/domain/usecase/use-case.interface";
 import Id from "../../../@shared/domain/value-object/id.value-object";
 import { ClientFacadeInterface } from "../../../client-adm/facade/client.facade.interface";
-import InvoiceItems from "../../../invoice/domain/invoice.items";
 import InvoiceFacadeInterface from "../../../invoice/facade/invoice.facade.interface";
-import InvoiceModel from "../../../invoice/repository/invoice.model";
 import PaymentFacadeInterface from "../../../payment/facade/facade.interface";
 import ProductAdmFacadeInterface from "../../../product-adm/facade/product-adm.facade.interface";
 import StoreCatalogFacadeInterface from "../../../store-catalog/facade/store-catalog.facade.interface";
