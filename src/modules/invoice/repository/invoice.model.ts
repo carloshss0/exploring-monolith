@@ -11,7 +11,7 @@ export default class InvoiceModel extends Model {
     @Column({ allowNull: false})
     declare id: string;
     
-    @Column({ allowNull: false, field: "order_id"})
+    @Column({ allowNull: false})
     declare name: string;
 
 
