@@ -20,7 +20,7 @@ export function createApp(sequelize: Sequelize): Express {
     app.use("/products", productRoute);
     app.use("/clients", clientRoute);
     app.use("/checkout", checkOutRoute);
-    app.use("/invoices", invoiceRoute);
+    app.use("/invoice", invoiceRoute);
 
     sequelize.addModels([
         ClientModel,

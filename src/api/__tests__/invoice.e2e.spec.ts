@@ -63,7 +63,7 @@ describe("E2E test for invoice", () => {
         );
 
         const response = await request(app)
-            .get("/invoices")
+            .get("/invoice")
             .send({
                 id: "1",
             });
@@ -87,7 +87,7 @@ describe("E2E test for invoice", () => {
 
     it("should not get an invoice", async () => {
         const response = await request(app)
-            .get("/invoices")
+            .get("/invoice")
             .send({
                 id: "1",
         });
