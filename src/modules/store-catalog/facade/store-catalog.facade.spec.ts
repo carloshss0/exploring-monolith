@@ -2,6 +2,8 @@ import { Sequelize } from "sequelize-typescript";
 import ProductModel from "../repository/product.model";
 import Product from "../domain/product.entity";
 import StoreCatalogFacadeFactory from "../factory/facade.factory";
+import OrderProductModel from "../../checkout/repository/order-product.model";
+import OrderModel from "../../checkout/repository/order.model";
 
 describe("Store Catalog test", () => {
     let sequelize: Sequelize;
@@ -14,7 +16,7 @@ describe("Store Catalog test", () => {
             sync: { force: true}
         });
 
-        await sequelize.addModels([ProductModel]);
+        await sequelize.addModels([ProductModel, OrderModel, OrderProductModel]);
         await sequelize.sync();
     });
 
