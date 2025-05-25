@@ -16,7 +16,7 @@ export default class TransactionModel extends Model {
 
     @PrimaryKey
     @Column({ allowNull: false})
-    declare amount: string;
+    declare amount: number;
 
     @PrimaryKey
     @Column({ allowNull: false, field: "created_at"})
