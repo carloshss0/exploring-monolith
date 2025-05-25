@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
-import { ProductModel } from "../repository/product.model";
+import { ProductRegistrationModel } from "../repository/product.model";
 import ProductAdmFacadeFactory from "../factory/facade.factory";
 import Product from "../domain/product.entity";
 
@@ -15,7 +15,7 @@ describe("ProductAdmFacade test", () => {
             sync: { force: true}
         });
 
-        await sequelize.addModels([ProductModel]);
+        await sequelize.addModels([ProductRegistrationModel]);
         await sequelize.sync();
     });
 
@@ -37,7 +37,7 @@ describe("ProductAdmFacade test", () => {
 
         await productFacade.addProduct(input);
 
-        const product = await ProductModel.findOne({
+        const product = await ProductRegistrationModel.findOne({
             where: { id: input.id },
         });
 
