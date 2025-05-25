@@ -51,14 +51,7 @@ export default class InvoiceRepository implements InvoiceGateway {
             id: input.id.id,
             name: input.name,
             document: input.document,
-            address: {
-                street: input.address.street,
-                number: input.address.number,
-                complement: input.address.complement,
-                city: input.address.city,
-                state: input.address.state,
-                zipCode: input.address.zipCode
-            },
+            address: input.address,
             items: input.items.map((item) => ({
                 id: item.id.id,
                 name: item.name,

@@ -42,4 +42,15 @@ export default class Address implements ValueObject{
         return this._zipCode;
     }
 
+    toJSON() {
+        return {
+            street: this._street,
+            number: this._number,
+            complement: this._complement,
+            city: this._city,
+            state: this._state,
+            zipCode: this._zipCode
+        };
+    }
+
 }
